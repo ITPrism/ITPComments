@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="plugin" group="content" method="upgrade">
+    <name>PLG_CONTENT_ITPCOMMENTS</name>
+    <author>Todor Iliev</author>
+    <copyright>Copyright (C) 2014 Todor Iliev ( ITPrism.com ). All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <authorEmail>todor@itprism.com</authorEmail>
+    <authorUrl>http://itprism.com</authorUrl>
+    <version>1.0</version>
+    <creationDate>26 September, 2014</creationDate>
+    <description><![CDATA[
+    <p><a href="#" target="_blank">ITP Comments</a> is an extension that adds Facebook and Disqus comments on your Joomla! website.</p>
+    <p>Invest in extension improvement. You can <a href="http://itprism.com/sponsorship" target="_blank">sponsor the extension via SMS, PayPal or Bitcoin</a>.</p>
+    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive information about updates and new ITPrism extensions.</p>
+    <p>Please, <a href="#" target="_blank">vote for the extension</a> on Joomla! Extensions Directory</p>
+    ]]></description>
+    
+    <files>
+        <filename plugin="itpcomments">itpcomments.php</filename>
+        <filename>index.html</filename>
+		<filename>README.md</filename>
+
+        <folder>language</folder>
+    </files>
+    
+    <help url="PLG_CONTENT_ITPCOMMENTS_HELP_URL"/>
+    
+    <config>
+		<fields name="params">
+
+            <fieldset name="basic">
+                <field name="platform" type="list" default="facebook" label="PLG_CONTENT_ITPCOMMENTS_COMMENTS_PLATFORM" description="PLG_CONTENT_ITPCOMMENTS_COMMENTS_PLATFORM_DESC">
+                    <option value="facebook">Facebook</option>
+                    <option value="disqus">Disqus</option>
+                </field>
+            </fieldset>
+
+			<fieldset name="com_content" label="PLG_CONTENT_ITPCOMMENTS_COM_CONTENT" >
+                <field name="content_display_articles" type="radio" default="1" label="PLG_CONTENT_ITPCOMMENTS_DISPLAY_IN_ARTICLE" description="PLG_CONTENT_ITPCOMMENTS_DISPLAY_IN_ARTICLE_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="excludeArticles" type="text" default="" size="80" label="PLG_CONTENT_ITPCOMMENTS_EXCLUDE_ARTICLES" description="PLG_CONTENT_ITPCOMMENTS_EXCLUDE_ARTICLES_DESC" />
+                <field name="excludeCats" type="text" default="" size="80" label="PLG_CONTENT_ITPCOMMENTS_EXCLUDE_CATEGORIES" description="PLG_CONTENT_ITPCOMMENTS_EXCLUDE_CATEGORIES_DESC" />
+                <field name="includeArticles" type="text" default="" size="80" label="PLG_CONTENT_ITPCOMMENTS_DISPLAY_IN_ARITCLES" description="PLG_CONTENT_ITPCOMMENTS_DISPLAY_IN_ARITCLES_DESC" />
+			</fieldset>
+			
+			<fieldset name="com_crowdfunding" label="PLG_CONTENT_ITPCOMMENTS_COM_CROWDFUNDING" >
+                <field name="crowdfunding_display_details" type="radio" default="0" label="PLG_CONTENT_ITPCOMMENTS_DISPLAY_ON_DETAILS" description="PLG_CONTENT_ITPCOMMENTS_DISPLAY_ON_DETAILS_DESC" class="btn-group">
+                 <option value="0">JNO</option>
+                 <option value="1">JYES</option>
+               </field>
+			</fieldset>
+			
+			<fieldset name="com_userideas" label="PLG_CONTENT_ITPCOMMENTS_COM_USERIDEAS" >
+                <field name="userideas_display_details" type="radio" default="0" label="PLG_CONTENT_ITPCOMMENTS_ENABLED_USERIDEAS" description="PLG_CONTENT_ITPCOMMENTS_ENABLED_USERIDEAS_DESC" class="btn-group">
+                 <option value="0">JNO</option>
+                 <option value="1">JYES</option>
+               </field>
+			</fieldset>
+			
+			<fieldset name="facebook" label="PLG_CONTENT_ITPCOMMENTS_FACEBOOK_COMMENTS">
+                <field name="number_of_posts" type="text" default="5" label="PLG_CONTENT_ITPCOMMENTS_NUMBER_OF_POSTS" description="PLG_CONTENT_ITPCOMMENTS_NUMBER_OF_POSTS_DESC"/>
+                <field name="color_scheme" type="list" default="light" label="PLG_CONTENT_ITPCOMMENTS_COLOR_SCHEME" description="PLG_CONTENT_ITPCOMMENTS_COLOR_SCHEME_DESC">
+                    <option value="light">PLG_CONTENT_ITPCOMMENTS_LIGHT</option>
+                    <option value="dark">PLG_CONTENT_ITPCOMMENTS_DARK</option>
+                </field>
+                <field name="order_by" type="list" default="social" label="PLG_CONTENT_ITPCOMMENTS_ORDER_BY" description="PLG_CONTENT_ITPCOMMENTS_ORDER_BY_DESC">
+                    <option value="social">PLG_CONTENT_ITPCOMMENTS_SOCIAL</option>
+                    <option value="reverse_time">PLG_CONTENT_ITPCOMMENTS_REVERSE_TIME</option>
+                    <option value="time">PLG_CONTENT_ITPCOMMENTS_TIME</option>
+                </field>
+                <field name="width" type="text" label="PLG_CONTENT_ITPCOMMENTS_WIDTH" description="PLG_CONTENT_ITPCOMMENTS_WIDTH_DESC"/>
+                <field name="api_id" type="text" default="" label="PLG_CONTENT_ITPCOMMENTS_FACEBOOK_APP_ID" description="PLG_CONTENT_ITPCOMMENTS_FACEBOOK_APP_ID_DESC" />
+                <field name="include_root_div" type="radio" default="1" label="PLG_CONTENT_ITPCOMMENTS_FACEBOOK_ROOT" description="PLG_CONTENT_ITPCOMMENTS_FACEBOOK_ROOT_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="load_js_library" type="radio" default="1" label="PLG_CONTENT_ITPCOMMENTS_LOAD_JS_LIB" description="PLG_CONTENT_ITPCOMMENTS_LOAD_JS_LIB_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+			</fieldset>
+
+            <fieldset name="disqus" label="PLG_CONTENT_ITPCOMMENTS_DISQUS_COMMENTS">
+                <field name="disqus_shortname" type="text" label="PLG_CONTENT_ITPCOMMENTS_DISQUS_SHORTNAME" description="PLG_CONTENT_ITPCOMMENTS_DISQUS_SHORTNAME_DESC"/>
+            </fieldset>
+			 
+        </fields>
+	</config>
+</extension>
