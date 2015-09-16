@@ -1,9 +1,13 @@
 ITPComments Plugin for Joomla!
 ==========================
-( Version 1.0 )
+( Version 1.1 )
 - - -
 
 This is a plugin that integrates Facebook or Disqus comments system on any Joomla! based website.
 
-##Download
-You can [download ITP Comments package] (http://itprism.com/free-joomla-extensions/social-marketing-seo/facebook-disqus-comments) from the website of ITPrism.
+Changelog
+---------
+
+###v1.1
+* Added option to select language.
+* Changed Facebook SDK to version 2.4.

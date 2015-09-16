@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.3" type="plugin" group="content" method="upgrade">
+<extension version="3.4" type="plugin" group="content" method="upgrade">
     <name>PLG_CONTENT_ITPCOMMENTS</name>
     <author>Todor Iliev</author>
-    <copyright>Copyright (C) 2014 Todor Iliev ( ITPrism.com ). All rights reserved.</copyright>
-    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <copyright>Copyright (C) 2015 Todor Iliev ( ITPrism.com ). All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.en.html</license>
     <authorEmail>todor@itprism.com</authorEmail>
     <authorUrl>http://itprism.com</authorUrl>
-    <version>1.0</version>
-    <creationDate>26 September, 2014</creationDate>
+    <version>1.1</version>
+    <creationDate>16 September, 2015</creationDate>
     <description><![CDATA[
     <p><a href="#" target="_blank">ITP Comments</a> is an extension that adds Facebook and Disqus comments on your Joomla! website.</p>
-    <p>Invest in extension improvement. You can <a href="http://itprism.com/sponsorship" target="_blank">sponsor the extension via SMS, PayPal or Bitcoin</a>.</p>
     <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive information about updates and new ITPrism extensions.</p>
     <p>Please, <a href="#" target="_blank">vote for the extension</a> on Joomla! Extensions Directory</p>
     ]]></description>
     
     <files>
         <filename plugin="itpcomments">itpcomments.php</filename>
-        <filename>index.html</filename>
 		<filename>README.md</filename>
 
         <folder>language</folder>
@@ -32,6 +30,116 @@
                 <field name="platform" type="list" default="facebook" label="PLG_CONTENT_ITPCOMMENTS_COMMENTS_PLATFORM" description="PLG_CONTENT_ITPCOMMENTS_COMMENTS_PLATFORM_DESC">
                     <option value="facebook">Facebook</option>
                     <option value="disqus">Disqus</option>
+                </field>
+                <field name="locale" type="list" default="" label="PLG_CONTENT_ITPCOMMENTS_LANGUAGE" description="PLG_CONTENT_ITPCOMMENTS_LANGUAGE_DESC">
+                    <option value="">PLG_CONTENT_ITPCOMMENTS_SELECT_AUTOMATICALLY</option>
+                    <option value="af_ZA">PLG_CONTENT_ITPCOMMENTS_AFRIKAANS</option>
+                    <option value="ar_AR">PLG_CONTENT_ITPCOMMENTS_ARABIC</option>
+                    <option value="sq_AL">PLG_CONTENT_ITPCOMMENTS_ALBANIAN</option>
+                    <option value="ay_BO">PLG_CONTENT_ITPCOMMENTS_AYMARA</option>
+                    <option value="az_AZ">PLG_CONTENT_ITPCOMMENTS_AZERI</option>
+                    <option value="be_BY">PLG_CONTENT_ITPCOMMENTS_BELARUSIAN</option>
+                    <option value="bg_BG">PLG_CONTENT_ITPCOMMENTS_BULGARIAN</option>
+                    <option value="bn_IN">PLG_CONTENT_ITPCOMMENTS_BENGALI</option>
+                    <option value="bs_BA">PLG_CONTENT_ITPCOMMENTS_BOSNIAN</option>
+                    <option value="ca_ES">PLG_CONTENT_ITPCOMMENTS_CATALAN</option>
+                    <option value="zh_CN">PLG_CONTENT_ITPCOMMENTS_CHINESE_ZH</option>
+                    <option value="zh_HK">PLG_CONTENT_ITPCOMMENTS_CHINESE_HK</option>
+                    <option value="zh_TW">PLG_CONTENT_ITPCOMMENTS_CHINESE_TW</option>
+                    <option value="ck_US">PLG_CONTENT_ITPCOMMENTS_CHEROKEE</option>
+                    <option value="cs_CZ">PLG_CONTENT_ITPCOMMENTS_CZECH</option>
+                    <option value="cy_GB">PLG_CONTENT_ITPCOMMENTS_WELSH</option>
+                    <option value="da_DK">PLG_CONTENT_ITPCOMMENTS_DANISH</option>
+                    <option value="de_DE">PLG_CONTENT_ITPCOMMENTS_GERMAN</option>
+                    <option value="el_GR">PLG_CONTENT_ITPCOMMENTS_GREEK</option>
+                    <option value="en_GB">PLG_CONTENT_ITPCOMMENTS_ENGLISH_GB</option>
+                    <option value="en_PI">PLG_CONTENT_ITPCOMMENTS_ENGLISH_PI</option>
+                    <option value="en_UD">PLG_CONTENT_ITPCOMMENTS_ENGLISH_UD</option>
+                    <option value="en_US">PLG_CONTENT_ITPCOMMENTS_ENGLISH</option>
+                    <option value="eo_EO">PLG_CONTENT_ITPCOMMENTS_ESPERANTO</option>
+                    <option value="es_CL">PLG_CONTENT_ITPCOMMENTS_SPANISH_CL</option>
+                    <option value="es_CO">PLG_CONTENT_ITPCOMMENTS_SPANISH_CO</option>
+                    <option value="es_ES">PLG_CONTENT_ITPCOMMENTS_SPANISH_ES</option>
+                    <option value="es_LA">PLG_CONTENT_ITPCOMMENTS_SPANISH</option>
+                    <option value="es_MX">PLG_CONTENT_ITPCOMMENTS_SPANISH_MX</option>
+                    <option value="es_VE">PLG_CONTENT_ITPCOMMENTS_SPANISH_VE</option>
+                    <option value="et_EE">PLG_CONTENT_ITPCOMMENTS_ESTONIAN</option>
+                    <option value="eu_ES">PLG_CONTENT_ITPCOMMENTS_BASQUE</option>
+                    <option value="fa_IR">PLG_CONTENT_ITPCOMMENTS_PERSIAN</option>
+                    <option value="fb_LT">PLG_CONTENT_ITPCOMMENTS_LEET_SPEAK</option>
+                    <option value="fi_FI">PLG_CONTENT_ITPCOMMENTS_FINNISH</option>
+                    <option value="fo_FO">PLG_CONTENT_ITPCOMMENTS_FAROESE</option>
+                    <option value="fr_CA">PLG_CONTENT_ITPCOMMENTS_FRENCH_CA</option>
+                    <option value="fr_FR">PLG_CONTENT_ITPCOMMENTS_FRENCH_FR</option>
+                    <option value="ga_IE">PLG_CONTENT_ITPCOMMENTS_IRISH</option>
+                    <option value="gl_ES">PLG_CONTENT_ITPCOMMENTS_GALICIAN</option>
+                    <option value="gn_PY">PLG_CONTENT_ITPCOMMENTS_GUARANI</option>
+                    <option value="gu_IN">PLG_CONTENT_ITPCOMMENTS_GUJARATI</option>
+                    <option value="he_IL">PLG_CONTENT_ITPCOMMENTS_HEBREW</option>
+                    <option value="hi_IN">PLG_CONTENT_ITPCOMMENTS_HINDI</option>
+                    <option value="hr_HR">PLG_CONTENT_ITPCOMMENTS_CROATIAN</option>
+                    <option value="hu_HU">PLG_CONTENT_ITPCOMMENTS_HUNGARIAN</option>
+                    <option value="hy_AM">PLG_CONTENT_ITPCOMMENTS_ARMENIAN</option>
+                    <option value="id_ID">PLG_CONTENT_ITPCOMMENTS_INDONESIAN</option>
+                    <option value="is_IS">PLG_CONTENT_ITPCOMMENTS_ICELANDIC</option>
+                    <option value="it_IT">PLG_CONTENT_ITPCOMMENTS_ITALIAN</option>
+                    <option value="ja_JP">PLG_CONTENT_ITPCOMMENTS_JAPANESE</option>
+                    <option value="jv_ID">PLG_CONTENT_ITPCOMMENTS_JAVANESE</option>
+                    <option value="ka_GE">PLG_CONTENT_ITPCOMMENTS_GEORGIAN</option>
+                    <option value="kk_KZ">PLG_CONTENT_ITPCOMMENTS_KAZAKH</option>
+                    <option value="km_KH">PLG_CONTENT_ITPCOMMENTS_KHMER</option>
+                    <option value="kn_IN">PLG_CONTENT_ITPCOMMENTS_KANNADA</option>
+                    <option value="ko_KR">PLG_CONTENT_ITPCOMMENTS_KOREAN</option>
+                    <option value="ku_TR">PLG_CONTENT_ITPCOMMENTS_KURDISH</option>
+                    <option value="la_VA">PLG_CONTENT_ITPCOMMENTS_LATIN</option>
+                    <option value="li_NL">PLG_CONTENT_ITPCOMMENTS_LIMBURGISH</option>
+                    <option value="lt_LT">PLG_CONTENT_ITPCOMMENTS_LITHUANIAN</option>
+                    <option value="lv_LV">PLG_CONTENT_ITPCOMMENTS_LATVIAN</option>
+                    <option value="mg_MG">PLG_CONTENT_ITPCOMMENTS_MALAGASY</option>
+                    <option value="mk_MK">PLG_CONTENT_ITPCOMMENTS_MACEDONIAN</option>
+                    <option value="ml_IN">PLG_CONTENT_ITPCOMMENTS_MALAYALAM</option>
+                    <option value="mn_MN">PLG_CONTENT_ITPCOMMENTS_MONGOLIAN</option>
+                    <option value="mr_IN">PLG_CONTENT_ITPCOMMENTS_MARATHI</option>
+                    <option value="ms_MY">PLG_CONTENT_ITPCOMMENTS_MALAY</option>
+                    <option value="mt_MT">PLG_CONTENT_ITPCOMMENTS_MALTESE</option>
+                    <option value="nb_NO">PLG_CONTENT_ITPCOMMENTS_NORWEGIAN_NB</option>
+                    <option value="nn_NO">PLG_CONTENT_ITPCOMMENTS_NORWEGIAN_NN</option>
+                    <option value="ne_NP">PLG_CONTENT_ITPCOMMENTS_NEPALI</option>
+                    <option value="nl_BE">PLG_CONTENT_ITPCOMMENTS_DUTCH_BE</option>
+                    <option value="nl_NL">PLG_CONTENT_ITPCOMMENTS_DUTCH</option>
+                    <option value="pa_IN">PLG_CONTENT_ITPCOMMENTS_PUNJABI</option>
+                    <option value="pl_PL">PLG_CONTENT_ITPCOMMENTS_POLISH</option>
+                    <option value="ps_AF">PLG_CONTENT_ITPCOMMENTS_PASHTO</option>
+                    <option value="pt_BR">PLG_CONTENT_ITPCOMMENTS_PORTUGUESE_BR</option>
+                    <option value="pt_PT">PLG_CONTENT_ITPCOMMENTS_PORTUGUESE_PT</option>
+                    <option value="qu_PE">PLG_CONTENT_ITPCOMMENTS_QUECHUA</option>
+                    <option value="rm_CH">PLG_CONTENT_ITPCOMMENTS_ROMANSH</option>
+                    <option value="ro_RO">PLG_CONTENT_ITPCOMMENTS_ROMANIAN</option>
+                    <option value="ru_RU">PLG_CONTENT_ITPCOMMENTS_RUSSIAN</option>
+                    <option value="sa_IN">PLG_CONTENT_ITPCOMMENTS_SANSKRIT</option>
+                    <option value="se_NO">PLG_CONTENT_ITPCOMMENTS_NORTHERN_SAMI</option>
+                    <option value="sk_SK">PLG_CONTENT_ITPCOMMENTS_SLOVAK</option>
+                    <option value="sl_SI">PLG_CONTENT_ITPCOMMENTS_SLOVENIAN</option>
+                    <option value="so_SO">PLG_CONTENT_ITPCOMMENTS_SOMALI</option>
+                    <option value="sr_RS">PLG_CONTENT_ITPCOMMENTS_SERBIAN</option>
+                    <option value="sv_SE">PLG_CONTENT_ITPCOMMENTS_SWEDISH</option>
+                    <option value="sw_KE">PLG_CONTENT_ITPCOMMENTS_SWAHILI</option>
+                    <option value="sy_SY">PLG_CONTENT_ITPCOMMENTS_SYRIAC</option>
+                    <option value="ta_IN">PLG_CONTENT_ITPCOMMENTS_TAMIL</option>
+                    <option value="te_IN">PLG_CONTENT_ITPCOMMENTS_TELUGU</option>
+                    <option value="tg_TJ">PLG_CONTENT_ITPCOMMENTS_TAJIK</option>
+                    <option value="th_TH">PLG_CONTENT_ITPCOMMENTS_THAI</option>
+                    <option value="tl_PH">PLG_CONTENT_ITPCOMMENTS_FILIPINO</option>
+                    <option value="tl_ST">PLG_CONTENT_ITPCOMMENTS_KLINGON</option>
+                    <option value="tr_TR">PLG_CONTENT_ITPCOMMENTS_TURKISH</option>
+                    <option value="tt_RU">PLG_CONTENT_ITPCOMMENTS_TATAR</option>
+                    <option value="uk_UA">PLG_CONTENT_ITPCOMMENTS_UKRAINIAN</option>
+                    <option value="ur_PK">PLG_CONTENT_ITPCOMMENTS_URDU</option>
+                    <option value="uz_UZ">PLG_CONTENT_ITPCOMMENTS_UZBEK</option>
+                    <option value="vi_VN">PLG_CONTENT_ITPCOMMENTS_VIETNAMESE</option>
+                    <option value="xh_ZA">PLG_CONTENT_ITPCOMMENTS_XHOSA</option>
+                    <option value="yi_DE">PLG_CONTENT_ITPCOMMENTS_YIDDISH</option>
+                    <option value="zu_ZA">PLG_CONTENT_ITPCOMMENTS_ZULU</option>
                 </field>
             </fieldset>
 

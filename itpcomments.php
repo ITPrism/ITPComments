@@ -3,8 +3,8 @@
  * @package         ITPComments
  * @subpackage      Plugins
  * @author          Todor Iliev
- * @copyright       Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
- * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @copyright       Copyright (C) 2015 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @license         http://www.gnu.org/licenses/gpl-3.0.en.html
  */
 
 // no direct access
@@ -71,16 +71,28 @@ class plgContentItpComments extends JPlugin
             return null;
         }
 
+        // Get locale code automatically
+        if (!$this->params->get("locale", "")) {
+            $lang         = JFactory::getLanguage();
+            $locale       = $lang->getTag();
+
+            $facebookLocale = str_replace("-", "_", $locale);
+            $disqusLocale   = substr($facebookLocale, 0, -3);
+        } else {
+            $facebookLocale = str_replace("-", "_", $this->params->get("locale", ""));
+            $disqusLocale   = substr($facebookLocale, 0, -3);
+        }
+
         $content = '<div style="clear:both;"></div><div class="itp-comments">';
 
         // Generate and return content
         switch ($this->params->get("platform", "facebook")) {
             case "disqus":
-                $content .=  $this->getDisqusComments($article, $context);
+                $content .=  $this->getDisqusComments($article, $disqusLocale);
                 break;
 
             default: // Facebook
-                $content .=  $this->getFacebookComments($article, $context);
+                $content .=  $this->getFacebookComments($article, $facebookLocale);
                 break;
         }
 
@@ -214,10 +226,11 @@ class plgContentItpComments extends JPlugin
      * Generate Facebook comments code.
      *
      * @param   object $article
+     * @param   string $locale
      *
      * @return  string
      */
-    private function getFacebookComments(&$article)
+    private function getFacebookComments(&$article, $locale)
     {
         $url = $this->getUrl($article);
 
@@ -233,7 +246,7 @@ class plgContentItpComments extends JPlugin
         var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId='.$this->params->get("api_id").'&version=v2.0";
+  js.src = "//connect.facebook.net/'.$locale.'/sdk.js#xfbml=1&appId='.$this->params->get("api_id").'&version=v2.4";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, "script", "facebook-jssdk"));
 </script>';
@@ -257,10 +270,11 @@ class plgContentItpComments extends JPlugin
      * Generate Disqus comments code.
      *
      * @param   object $article
+     * @param   string $locale
      *
      * @return  string
      */
-    private function getDisqusComments(&$article)
+    private function getDisqusComments(&$article, $locale)
     {
         $url = $this->getUrl($article);
         $identifier = $this->getIdentifier();
@@ -272,6 +286,10 @@ class plgContentItpComments extends JPlugin
         var disqus_shortname = "'.$this->params->get('disqus_shortname').'";
         var disqus_url = "'.$url.'";
         var disqus_identifier = "'.$identifier.'";
+
+        var disqus_config = function () {
+          this.language = "'.$locale.'";
+        };
 
         (function() {
             var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;
